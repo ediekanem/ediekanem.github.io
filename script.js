@@ -40,10 +40,11 @@ document.querySelectorAll(".project-thumb").forEach((btn) => {
   });
 });
 
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) lightbox.close();
+document.querySelector(".lightbox-close").addEventListener("click", (e) => {
+  e.stopPropagation();
+  lightbox.close();
 });
 
-document.querySelector(".lightbox-close").addEventListener("click", () => {
-  lightbox.close();
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) lightbox.close();
 });
