@@ -4,11 +4,11 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg: #f7f5f2;
-  --text: #1c1917;
-  --text-secondary: #6b6560;
-  --accent: #3d3870;
-  --border: #d9d4cc;
+  --bg: #f4f4f7;
+  --text: #1b1b22;
+  --text-secondary: #62626e;
+  --accent: #4a4580;
+  --border: #d4d4da;
   --max-w: 1100px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -78,7 +78,7 @@ ul {
 
 .wordmark {
   font-family: "Instrument Serif", serif;
-  font-size: 1.2rem;
+  font-size: 1.65rem;
   letter-spacing: 0.01em;
 }
 
@@ -164,6 +164,7 @@ h1 {
 
 .project-img {
   margin: 0;
+  max-width: 72%;
   border-radius: 3px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -176,7 +177,7 @@ h1 {
 }
 
 .project-img:hover img {
-  transform: scale(1.015);
+  transform: scale(1.01);
 }
 
 .project-body {
@@ -387,6 +388,10 @@ h2 {
 /* ─── Responsive ──────────────────────── */
 
 @media (max-width: 768px) {
+  .project-img {
+    max-width: 100%;
+  }
+
   .project-body {
     grid-template-columns: 1fr;
   }
