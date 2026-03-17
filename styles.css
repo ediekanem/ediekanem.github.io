@@ -1,14 +1,15 @@
 /* ═══════════════════════════════════════════
    Edidiong Ekanem — Portfolio
-   Aesthetic: Editorial minimalism
+   Aesthetic: Dark editorial
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg: #f4f4f7;
-  --text: #1b1b22;
-  --text-secondary: #62626e;
-  --accent: #4a4580;
-  --border: #d4d4da;
+  --bg: #17171c;
+  --bg-raised: #1e1e25;
+  --text: #e2e0dd;
+  --text-secondary: #8a8791;
+  --accent: #c4a882;
+  --border: rgba(255, 255, 255, 0.08);
   --max-w: 1100px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -58,9 +59,16 @@ p {
   margin: 0;
 }
 
-ul {
+ul, dl {
   margin: 0;
+}
+
+ul {
   padding-left: 1.25rem;
+}
+
+button {
+  font: inherit;
 }
 
 
@@ -78,7 +86,7 @@ ul {
 
 .wordmark {
   font-family: "Instrument Serif", serif;
-  font-size: 1.65rem;
+  font-size: 2.1rem;
   letter-spacing: 0.01em;
 }
 
@@ -156,62 +164,98 @@ h1 {
 }
 
 
-/* ─── Project ─────────────────────────── */
+/* ─── Work Section ────────────────────── */
 
-.project {
-  padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(3rem, 7vw, 5rem);
+.work {
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 4rem);
 }
 
-.project-img {
-  margin: 0;
-  max-width: 72%;
-  border-radius: 3px;
-  overflow: hidden;
+
+/* ─── Project Row ─────────────────────── */
+
+.project-row {
+  display: grid;
+  grid-template-columns: clamp(180px, 22vw, 260px) 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.project-thumb {
+  background: none;
   border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 300ms;
 }
 
-.project-img img {
+.project-thumb:hover,
+.project-thumb:focus-visible {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-thumb img {
   width: 100%;
   display: block;
-  transition: transform 500ms var(--ease-out);
+  transition: transform 400ms var(--ease-out);
 }
 
-.project-img:hover img {
-  transform: scale(1.01);
+.project-thumb:hover img {
+  transform: scale(1.03);
 }
 
-.project-body {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(2rem, 4vw, 4rem);
-  margin-top: clamp(2rem, 4vw, 3rem);
-}
-
-h2 {
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-  letter-spacing: -0.015em;
+.project-info h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  letter-spacing: -0.01em;
 }
 
 .project-type {
-  margin-top: 0.6rem;
-  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
-.project-text > p:not(.project-type) {
-  margin-top: 1.25rem;
+.project-desc {
+  margin-top: 1rem;
   color: var(--text-secondary);
-  max-width: 50ch;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.project-meta {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.project-meta div {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.project-meta dt {
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  min-width: 4.5rem;
+}
+
+.project-meta dd {
+  margin: 0;
+  color: var(--text-secondary);
 }
 
 .project-link {
   display: inline-block;
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--accent);
   position: relative;
 }
@@ -232,36 +276,6 @@ h2 {
 .project-link:hover::after,
 .project-link:focus-visible::after {
   transform: scaleX(1);
-}
-
-.project-details h3 {
-  font-family: "DM Sans", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 0.75rem;
-}
-
-.project-details > div + div {
-  margin-top: 2.25rem;
-}
-
-.project-details ul {
-  list-style: none;
-  padding: 0;
-}
-
-.project-details li {
-  padding: 0.45rem 0;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  border-bottom: 1px solid var(--border);
-}
-
-.project-details li:last-child {
-  border-bottom: none;
 }
 
 
@@ -349,6 +363,64 @@ h2 {
 }
 
 
+/* ─── Lightbox ────────────────────────── */
+
+.lightbox {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.lightbox::backdrop {
+  background: rgba(8, 8, 12, 0.92);
+}
+
+.lightbox-wrap {
+  position: relative;
+}
+
+.lightbox-wrap img {
+  max-width: 88vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 3px;
+  animation: lightbox-in 350ms var(--ease-out);
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 200ms;
+}
+
+.lightbox-close:hover {
+  color: var(--text);
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+
 /* ─── Reveal Animation ────────────────── */
 
 .reveal {
@@ -379,8 +451,12 @@ h2 {
     scroll-behavior: auto;
   }
 
-  .project-img img {
+  .project-thumb img {
     transition: none;
+  }
+
+  .lightbox-wrap img {
+    animation: none;
   }
 }
 
@@ -388,24 +464,25 @@ h2 {
 /* ─── Responsive ──────────────────────── */
 
 @media (max-width: 768px) {
-  .project-img {
-    max-width: 100%;
+  .project-row {
+    grid-template-columns: 1fr;
   }
 
-  .project-body {
-    grid-template-columns: 1fr;
+  .project-thumb {
+    max-width: 280px;
   }
 
   .about {
     grid-template-columns: 1fr;
   }
 
-  .project-text > p:not(.project-type) {
+  .about-text p {
     max-width: none;
   }
 
-  .about-text p {
-    max-width: none;
+  .project-meta div {
+    flex-direction: column;
+    gap: 0.15rem;
   }
 }
 
@@ -414,6 +491,10 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
+  }
+
+  .wordmark {
+    font-size: 1.7rem;
   }
 
   h1 {

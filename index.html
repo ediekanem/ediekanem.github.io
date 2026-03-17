@@ -31,39 +31,28 @@
       <span>01 Featured Work</span>
     </div>
 
-    <section id="work" class="project">
-      <figure class="project-img reveal">
-        <img src="assets/dashboard-preview.jpg" alt="Road Traffic Accident Analysis Dashboard built in Excel, showing charts for accident frequency, severity by road condition, lighting, and geography with interactive filters">
-      </figure>
-
-      <div class="project-body">
-        <div class="project-text reveal">
+    <section id="work" class="work">
+      <article class="project-row reveal">
+        <button class="project-thumb" type="button" aria-label="View full dashboard preview">
+          <img src="assets/dashboard-preview.jpg" alt="Road Traffic Accident Analysis Dashboard built in Excel">
+        </button>
+        <div class="project-info">
           <h2>Road Traffic Accident Analysis</h2>
           <p class="project-type">Excel Dashboard | End-to-End Analytics</p>
-          <p>An end-to-end project transforming raw accident records into a decision-ready dashboard. The analysis explores accident frequency, severity, road conditions, lighting, geography, and other risk factors to support clearer road safety planning and targeted intervention.</p>
+          <p class="project-desc">An end-to-end project transforming raw accident records into a decision-ready dashboard. The analysis explores accident frequency, severity, road conditions, lighting, geography, and other risk factors to support clearer road safety planning and targeted intervention.</p>
+          <dl class="project-meta">
+            <div>
+              <dt>Process</dt>
+              <dd>Data cleaning, descriptive analysis, KPI development, dashboard design, insight communication</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <dd>PivotTables, PivotCharts, KPI Calculations, Interactive Slicers</dd>
+            </div>
+          </dl>
           <a class="project-link" href="https://github.com/ediekanem/road-traffic-accident-analysis-excel" target="_blank" rel="noreferrer">View on GitHub<span aria-hidden="true"> &#8594;</span></a>
         </div>
-        <div class="project-details reveal">
-          <div>
-            <h3>Process</h3>
-            <ul>
-              <li>Data cleaning &amp; transformation</li>
-              <li>Descriptive analysis &amp; KPI development</li>
-              <li>Dashboard design for decision support</li>
-              <li>Insight communication &amp; recommendations</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Built With</h3>
-            <ul>
-              <li>PivotTables &amp; PivotCharts</li>
-              <li>KPI Calculations</li>
-              <li>Interactive Slicers</li>
-              <li>Custom Dashboard Layout</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      </article>
     </section>
 
     <div class="divider reveal" aria-hidden="true">
@@ -96,6 +85,13 @@
     </div>
     <p class="copyright">&copy; <span id="year"></span></p>
   </footer>
+
+  <dialog class="lightbox" id="lightbox">
+    <div class="lightbox-wrap">
+      <img src="" alt="" id="lightbox-img">
+      <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
