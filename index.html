@@ -25,7 +25,7 @@
   <main>
     <section class="intro">
       <h1 class="reveal">Turning messy data into clear stories and better decisions.</h1>
-      <p class="intro-sub reveal">Public health researcher and data analytics professional, using research and applied analysis to uncover patterns, communicate insight, and support practical action.</p>
+      <p class="intro-sub reveal">Public health researcher and data analytics professional using research, data analysis, and visualization to uncover patterns, communicate insight, and support practical decision-making.</p>
     </section>
 
     <div class="divider reveal" aria-hidden="true">
@@ -33,27 +33,76 @@
     </div>
 
     <section id="work" class="work">
-      <article class="project-row reveal">
-        <button class="project-thumb" type="button" aria-label="View full dashboard preview">
-          <img src="assets/dashboard-preview.jpg" alt="Road Traffic Accident Analysis Dashboard built in Excel">
-        </button>
-        <div class="project-info">
-          <h2>Road Traffic Accident Analysis</h2>
-          <p class="project-type">Excel Dashboard | End-to-End Analytics</p>
-          <p class="project-desc">An end-to-end project transforming raw accident records into a decision-ready dashboard. The analysis explores accident frequency, severity, road conditions, lighting, geography, and other risk factors to support clearer road safety planning and targeted intervention.</p>
-          <dl class="project-meta">
-            <div>
-              <dt>Process</dt>
-              <dd>Data cleaning, descriptive analysis, KPI development, dashboard design, insight communication</dd>
-            </div>
-            <div>
-              <dt>Tools</dt>
-              <dd>PivotTables, PivotCharts, KPI Calculations, Interactive Slicers</dd>
-            </div>
-          </dl>
-          <a class="project-link" href="https://github.com/ediekanem/road-traffic-accident-analysis-excel" target="_blank" rel="noreferrer">View on GitHub<span aria-hidden="true"> &#8594;</span></a>
+      <div class="work-slider reveal" aria-roledescription="carousel">
+        <div class="work-slider-head">
+          <div class="work-slider-controls" aria-label="Featured work navigation">
+            <button class="work-arrow" type="button" data-direction="prev" aria-label="Show previous project">
+              <span aria-hidden="true">&#8592;</span>
+            </button>
+            <button class="work-arrow" type="button" data-direction="next" aria-label="Show next project">
+              <span aria-hidden="true">&#8594;</span>
+            </button>
+          </div>
         </div>
-      </article>
+
+        <div class="work-viewport" tabindex="0" aria-label="Featured projects. Use left and right arrow keys to change projects.">
+          <div class="work-track">
+            <article class="project-row project-slide">
+              <button class="project-thumb" type="button" aria-label="View full dashboard preview for CoreTech Labs road traffic accident analysis">
+                <img src="assets/dashboard-preview.jpg" alt="Road Traffic Accident Analysis dashboard built in Excel">
+              </button>
+              <div class="project-info">
+                <h2>CoreTech Labs | Road Traffic Accident Analysis</h2>
+                <p class="project-type">Excel Dashboard | Descriptive Analysis and KPI Reporting</p>
+                <p class="project-desc">Transformed raw road traffic accident data into a structured Excel dashboard that highlights accident frequency, severity, risk factors, and geographic hotspots. The project included data cleaning, KPI development, descriptive analysis, and dashboard design to support clearer road safety planning and targeted intervention.</p>
+                <dl class="project-meta">
+                  <div>
+                    <dt>Process</dt>
+                    <dd>Data cleaning, descriptive analysis, KPI development, dashboard design, insight communication</dd>
+                  </div>
+                  <div>
+                    <dt>Tools</dt>
+                    <dd>Excel Tables, PivotTables, PivotCharts, KPI Calculations, Interactive Slicers</dd>
+                  </div>
+                </dl>
+                <a class="project-link" href="https://github.com/ediekanem/road-traffic-accident-analysis-excel" target="_blank" rel="noreferrer">View on GitHub<span aria-hidden="true"> &#8594;</span></a>
+              </div>
+            </article>
+
+            <article class="project-row project-slide">
+              <div class="project-thumbs">
+                <button class="project-thumb" type="button" aria-label="View full dashboard preview for FreelanceGig freelancer performance analysis">
+                  <img src="assets/freelancer-performance-dashboard-preview.png" alt="Freelancer Performance Dashboard built in Tableau">
+                </button>
+                <button class="project-thumb" type="button" aria-label="View full dashboard preview for FreelanceGig earnings forecast analysis">
+                  <img src="assets/freelancer-earnings-forecast-dashboard-preview.png" alt="Freelancer Earnings Forecast Dashboard built in Tableau">
+                </button>
+              </div>
+              <div class="project-info">
+                <h2>FreelanceGig | Freelancer Performance and Earnings Analysis</h2>
+                <p class="project-type">Tableau Dashboards | Performance Analysis and Forecasting</p>
+                <p class="project-desc">Analyzed freelance marketplace data in Tableau to evaluate freelancer performance, earnings patterns, and platform-level trends. Built two interactive dashboards to compare job success rate, client rating, rehire rate, hourly pricing, earnings by category, and forecasted earnings trends across digital platforms.</p>
+                <dl class="project-meta">
+                  <div>
+                    <dt>Process</dt>
+                    <dd>Data preparation, table joins, calculated fields, dashboard design, trend analysis, forecasting</dd>
+                  </div>
+                  <div>
+                    <dt>Tools</dt>
+                    <dd>Tableau, Calculated Fields, Interactive Filters, Forecasting, Dashboard Design</dd>
+                  </div>
+                </dl>
+                <a class="project-link" href="https://github.com/ediekanem/freelance-marketplace-analytics-tableau" target="_blank" rel="noreferrer">View on GitHub<span aria-hidden="true"> &#8594;</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="work-pagination" aria-label="Project navigation">
+          <button class="work-page is-active" type="button" data-slide="0" aria-label="Go to project 1" aria-current="true">1</button>
+          <button class="work-page" type="button" data-slide="1" aria-label="Go to project 2">2</button>
+        </div>
+      </div>
     </section>
 
     <div class="divider reveal" aria-hidden="true">
@@ -62,16 +111,16 @@
 
     <section id="about" class="about">
       <div class="about-text reveal">
-        <p>I am a public health researcher and data analytics professional with experience in public health research, policy support, stakeholder engagement, and applied analytics.</p>
-        <p>My interests sit in health analytics, evaluation, reporting, and broader analyst roles where data can be translated into meaningful action. I am building a focused portfolio of completed, end-to-end work that shows how I think through an analytics problem from start to finish.</p>
+        <p>I am a public health researcher and data analytics professional with experience in research, policy support, stakeholder engagement, and applied analytics.</p>
+        <p>My interests include health analytics, evaluation, reporting, and broader analyst roles where data can be translated into meaningful action. I am building a focused portfolio of completed projects that show how I approach data cleaning, analysis, dashboarding, and insight communication across different tools and problem areas.</p>
       </div>
       <aside class="about-aside reveal">
         <h3>What I Bring</h3>
         <ul>
           <li>Thoughtful data cleaning and transformation</li>
           <li>Descriptive analysis and KPI development</li>
-          <li>Dashboard design for fast understanding</li>
-          <li>Clear reporting and insight communication</li>
+          <li>Dashboard design for clear decision support</li>
+          <li>Reporting and insight communication</li>
         </ul>
       </aside>
     </section>

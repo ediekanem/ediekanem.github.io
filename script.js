@@ -30,6 +30,56 @@ reveals.forEach((el) => {
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
+const workSlider = document.querySelector(".work-slider");
+const workTrack = document.querySelector(".work-track");
+const workSlides = [...document.querySelectorAll(".project-slide")];
+const workPages = [...document.querySelectorAll(".work-page")];
+const prevArrow = document.querySelector('[data-direction="prev"]');
+const nextArrow = document.querySelector('[data-direction="next"]');
+
+let currentSlide = 0;
+
+const updateSlider = (index) => {
+  currentSlide = Math.max(0, Math.min(index, workSlides.length - 1));
+  workTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+  workPages.forEach((page, pageIndex) => {
+    const isActive = pageIndex === currentSlide;
+    page.classList.toggle("is-active", isActive);
+    page.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+
+  prevArrow.disabled = currentSlide === 0;
+  nextArrow.disabled = currentSlide === workSlides.length - 1;
+};
+
+prevArrow.addEventListener("click", () => {
+  updateSlider(currentSlide - 1);
+});
+
+nextArrow.addEventListener("click", () => {
+  updateSlider(currentSlide + 1);
+});
+
+workPages.forEach((page) => {
+  page.addEventListener("click", () => {
+    updateSlider(Number(page.dataset.slide));
+  });
+});
+
+workSlider.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    updateSlider(currentSlide - 1);
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    updateSlider(currentSlide + 1);
+  }
+});
+
+updateSlider(0);
 
 document.querySelectorAll(".project-thumb").forEach((btn) => {
   btn.addEventListener("click", () => {
