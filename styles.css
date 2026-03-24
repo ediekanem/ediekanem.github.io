@@ -254,6 +254,10 @@ h1 {
   min-width: 100%;
 }
 
+.project-row-dermai {
+  align-items: start;
+}
+
 .project-thumbs {
   display: grid;
   gap: 1rem;
@@ -285,6 +289,16 @@ h1 {
 
 .project-thumb:hover img {
   transform: scale(1.03);
+}
+
+.project-thumb-full img {
+  object-fit: contain;
+  object-position: left center;
+}
+
+.project-thumb-full {
+  aspect-ratio: 799 / 640;
+  align-self: start;
 }
 
 .project-info h2 {
@@ -489,32 +503,176 @@ h1 {
 
 .lightbox-wrap {
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+  display: block;
 }
 
-.lightbox-wrap img {
-  max-width: 88vw;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 3px;
-  animation: lightbox-in 350ms var(--ease-out);
-}
-
-.lightbox-close {
+.lightbox-topbar {
   position: fixed;
   top: 1.25rem;
   right: 1.5rem;
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 2rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0.5rem;
-  transition: color 200ms;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 2;
 }
 
-.lightbox-close:hover {
+.lightbox-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 350ms var(--ease-out);
+}
+
+.lightbox-item {
+  flex: 0 0 100%;
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-item img {
+  width: auto;
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100vh - 5.5rem);
+  object-fit: contain;
+  border-radius: 3px;
+  animation: lightbox-in 350ms var(--ease-out);
+  transform-origin: center center;
+  transition: transform 250ms var(--ease-out);
+  user-select: none;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(30, 30, 37, 0.9);
   color: var(--text);
+  cursor: pointer;
+  transition:
+    border-color 200ms,
+    color 200ms,
+    transform 200ms;
+}
+
+.lightbox-nav:hover,
+.lightbox-nav:focus-visible {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--accent);
+  transform: translateY(calc(-50% - 1px));
+}
+
+.lightbox-nav:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: translateY(-50%);
+}
+
+#lightbox-prev {
+  left: 1rem;
+}
+
+#lightbox-next {
+  right: 1rem;
+}
+
+.lightbox-pagination {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 0;
+}
+
+.lightbox-page {
+  width: 0.65rem;
+  height: 0.65rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 0;
+  cursor: pointer;
+  transition:
+    background-color 200ms,
+    transform 200ms;
+}
+
+.lightbox-page:hover,
+.lightbox-page:focus-visible {
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(1.05);
+}
+
+.lightbox-page.is-active {
+  background: var(--accent);
+}
+
+.lightbox-zoom,
+.lightbox-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(30, 30, 37, 0.9);
+  color: var(--text-secondary);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    border-color 200ms,
+    color 200ms,
+    transform 200ms;
+}
+
+.lightbox-zoom:hover,
+.lightbox-zoom:focus-visible,
+.lightbox-close:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  transform: translateY(-1px);
+}
+
+.lightbox-zoom.is-zoomed {
+  color: var(--accent);
+}
+
+.lightbox-item img.is-zoomable {
+  cursor: grab;
+}
+
+.lightbox-item img.is-dragging {
+  cursor: grabbing;
 }
 
 @keyframes lightbox-in {
@@ -559,8 +717,13 @@ h1 {
     transition: none;
   }
 
-  .lightbox-wrap img {
+  .lightbox-item img {
     animation: none;
+    transition: none;
+  }
+
+  .lightbox-track {
+    transition: none;
   }
 }
 
@@ -579,6 +742,15 @@ h1 {
 
   .project-thumb {
     max-width: 320px;
+  }
+
+  .lightbox-wrap {
+    padding: 0.75rem;
+  }
+
+  .lightbox-item img {
+    max-width: calc(100vw - 1.5rem);
+    max-height: calc(100vh - 5rem);
   }
 
   .about {

@@ -49,10 +49,10 @@
           <div class="work-track">
             <article class="project-row project-slide">
               <div class="project-thumbs">
-                <button class="project-thumb" type="button" aria-label="View full dashboard preview for CoreTech Labs road traffic accident overview dashboard">
+                <button class="project-thumb" type="button" data-gallery="coretech" data-gallery-index="0" aria-label="View full dashboard preview for CoreTech Labs road traffic accident overview dashboard">
                   <img src="assets/road-accident-overview-dashboard-preview.jpg" alt="Road Traffic Accident Overview Dashboard built in Excel">
                 </button>
-                <button class="project-thumb" type="button" aria-label="View full dashboard preview for CoreTech Labs road traffic accident risk factors dashboard">
+                <button class="project-thumb" type="button" data-gallery="coretech" data-gallery-index="1" aria-label="View full dashboard preview for CoreTech Labs road traffic accident risk factors dashboard">
                   <img src="assets/road-accident-risk-factors-dashboard-preview.jpg" alt="Road Traffic Accident Risk Factors Dashboard built in Excel">
                 </button>
               </div>
@@ -76,10 +76,10 @@
 
             <article class="project-row project-slide">
               <div class="project-thumbs">
-                <button class="project-thumb" type="button" aria-label="View full dashboard preview for FreelanceGig freelancer performance analysis">
+                <button class="project-thumb" type="button" data-gallery="freelancegig" data-gallery-index="0" aria-label="View full dashboard preview for FreelanceGig freelancer performance analysis">
                   <img src="assets/freelancer-performance-dashboard-preview.png" alt="Freelancer Performance Dashboard built in Tableau">
                 </button>
-                <button class="project-thumb" type="button" aria-label="View full dashboard preview for FreelanceGig earnings forecast analysis">
+                <button class="project-thumb" type="button" data-gallery="freelancegig" data-gallery-index="1" aria-label="View full dashboard preview for FreelanceGig earnings forecast analysis">
                   <img src="assets/freelancer-earnings-forecast-dashboard-preview.png" alt="Freelancer Earnings Forecast Dashboard built in Tableau">
                 </button>
               </div>
@@ -100,12 +100,35 @@
                 <a class="project-link" href="https://github.com/ediekanem/freelance-marketplace-analytics-tableau" target="_blank" rel="noreferrer">View on GitHub<span aria-hidden="true"> &#8594;</span></a>
               </div>
             </article>
+
+            <article class="project-row project-slide project-row-dermai">
+              <button class="project-thumb project-thumb-full" type="button" data-gallery="dermai" aria-label="View SQL query gallery for DermAI Diagnostics skin lesion analysis">
+                <img src="assets/SQL-queries-image-1.jpg" alt="DermAI Diagnostics SQL query image 1">
+              </button>
+              <div class="project-info">
+                <h2>DermAI Diagnostics | Skin Lesion Analysis</h2>
+                <p class="project-type">SQL Analysis | Risk Factor Exploration and Dataset Preparation</p>
+                <p class="project-desc">Analyzed linked clinical and lesion-level skin lesion data in SQL to examine demographic, environmental, and lesion-specific patterns associated with different diagnoses. The project involved joining and validating relational tables, exploring clinically relevant risk factors, and preparing a machine-learning-ready dataset to support future predictive analysis.</p>
+                <dl class="project-meta">
+                  <div>
+                    <dt>Process</dt>
+                    <dd>Table joins, data validation, exploratory analysis, risk factor analysis, feature selection, dataset preparation</dd>
+                  </div>
+                  <div>
+                    <dt>Tools</dt>
+                    <dd>SQL, Aggregation Queries, Data Validation, Exploratory Data Analysis, Feature Selection</dd>
+                  </div>
+                </dl>
+                <a class="project-link" href="https://github.com/ediekanem/dermai-skin-lesion-analysis-sql" target="_blank" rel="noreferrer">View on GitHub<span aria-hidden="true"> &#8594;</span></a>
+              </div>
+            </article>
           </div>
         </div>
 
         <div class="work-pagination" aria-label="Project navigation">
           <button class="work-page is-active" type="button" data-slide="0" aria-label="Go to project 1" aria-current="true">1</button>
           <button class="work-page" type="button" data-slide="1" aria-label="Go to project 2">2</button>
+          <button class="work-page" type="button" data-slide="2" aria-label="Go to project 3">3</button>
         </div>
       </div>
     </section>
@@ -143,8 +166,20 @@
 
   <dialog class="lightbox" id="lightbox">
     <div class="lightbox-wrap">
-      <img src="" alt="" id="lightbox-img">
-      <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+      <div class="lightbox-topbar">
+        <button class="lightbox-zoom" type="button" aria-label="Zoom image">+</button>
+        <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+      </div>
+      <button class="lightbox-nav" id="lightbox-prev" type="button" aria-label="Show previous image">
+        <span aria-hidden="true">&#8592;</span>
+      </button>
+      <div class="lightbox-stage">
+        <div class="lightbox-track" id="lightbox-track"></div>
+      </div>
+      <button class="lightbox-nav" id="lightbox-next" type="button" aria-label="Show next image">
+        <span aria-hidden="true">&#8594;</span>
+      </button>
+      <div class="lightbox-pagination" id="lightbox-pagination" aria-label="Gallery image navigation"></div>
     </div>
   </dialog>
 
