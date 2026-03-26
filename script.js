@@ -47,17 +47,6 @@ const galleryImages = {
     { src: "assets/freelancer-performance-dashboard-preview.png", alt: "Freelancer Performance Dashboard built in Tableau" },
     { src: "assets/freelancer-earnings-forecast-dashboard-preview.png", alt: "Freelancer Earnings Forecast Dashboard built in Tableau" },
   ],
-  dermai: [
-    { src: "assets/SQL-queries-image-1.jpg", alt: "DermAI Diagnostics SQL query image 1" },
-    { src: "assets/SQL-queries-image-2.jpg", alt: "DermAI Diagnostics SQL query image 2" },
-    { src: "assets/SQL-queries-image-3.jpg", alt: "DermAI Diagnostics SQL query image 3" },
-    { src: "assets/SQL-queries-image-4.jpg", alt: "DermAI Diagnostics SQL query image 4" },
-    { src: "assets/SQL-queries-image-5.jpg", alt: "DermAI Diagnostics SQL query image 5" },
-    { src: "assets/SQL-queries-image-6.jpg", alt: "DermAI Diagnostics SQL query image 6" },
-    { src: "assets/SQL-queries-image-7.jpg", alt: "DermAI Diagnostics SQL query image 7" },
-    { src: "assets/SQL-queries-image-8.jpg", alt: "DermAI Diagnostics SQL query image 8" },
-    { src: "assets/SQL-queries-image-9.jpg", alt: "DermAI Diagnostics SQL query image 9" },
-  ],
 };
 
 const LIGHTBOX_ZOOM_SCALE = 1.85;

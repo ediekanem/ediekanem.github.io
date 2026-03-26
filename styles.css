@@ -258,6 +258,10 @@ h1 {
   align-items: start;
 }
 
+.project-row-no-thumb {
+  grid-template-columns: 1fr;
+}
+
 .project-thumbs {
   display: grid;
   gap: 1rem;
