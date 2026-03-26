@@ -47,6 +47,16 @@ const galleryImages = {
     { src: "assets/freelancer-performance-dashboard-preview.png", alt: "Freelancer Performance Dashboard built in Tableau" },
     { src: "assets/freelancer-earnings-forecast-dashboard-preview.png", alt: "Freelancer Earnings Forecast Dashboard built in Tableau" },
   ],
+  dermai: [
+    { src: "assets/SQL-queries-preview-1.jpg", alt: "SQL query preview 1 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-2.jpg", alt: "SQL query preview 2 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-3.jpg", alt: "SQL query preview 3 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-4.jpg", alt: "SQL query preview 4 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-5.jpg", alt: "SQL query preview 5 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-6.jpg", alt: "SQL query preview 6 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-7.jpg", alt: "SQL query preview 7 for DermAI Diagnostics skin lesion analysis" },
+    { src: "assets/SQL-queries-preview-8.jpg", alt: "SQL query preview 8 for DermAI Diagnostics skin lesion analysis" },
+  ],
 };
 
 const LIGHTBOX_ZOOM_SCALE = 1.85;
@@ -54,6 +64,7 @@ const LIGHTBOX_ZOOM_SCALE = 1.85;
 let currentSlide = 0;
 let currentLightboxIndex = 0;
 let currentGallery = [];
+let currentLightboxClass = "";
 let lightboxZoomed = false;
 let lightboxPan = { x: 0, y: 0 };
 let lightboxDragging = false;
@@ -166,11 +177,16 @@ const updateLightbox = (index) => {
   applyLightboxZoom();
 };
 
-const openLightbox = (images, startIndex = 0) => {
+const openLightbox = (images, startIndex = 0, lightboxClass = "") => {
   currentGallery = images;
+  currentLightboxClass = lightboxClass;
   lightboxZoomed = false;
   lightboxPan = { x: 0, y: 0 };
   stopLightboxDragging();
+  lightbox.classList.remove("lightbox-gallery-dermai");
+  if (currentLightboxClass) {
+    lightbox.classList.add(currentLightboxClass);
+  }
   renderLightbox();
   updateLightbox(startIndex);
   lightbox.showModal();
@@ -237,14 +253,15 @@ document.querySelectorAll(".project-thumb").forEach((btn) => {
   btn.addEventListener("click", () => {
     const galleryKey = btn.dataset.gallery;
     const startIndex = Number(btn.dataset.galleryIndex || 0);
+    const lightboxClass = btn.dataset.lightboxClass || "";
 
     if (galleryKey && galleryImages[galleryKey]) {
-      openLightbox(galleryImages[galleryKey], startIndex);
+      openLightbox(galleryImages[galleryKey], startIndex, lightboxClass);
       return;
     }
 
     const img = btn.querySelector("img");
-    openLightbox([{ src: img.src, alt: img.alt }]);
+    openLightbox([{ src: img.src, alt: img.alt }], 0, lightboxClass);
   });
 });
 
@@ -281,11 +298,13 @@ lightbox.addEventListener("click", (event) => {
 lightbox.addEventListener("close", () => {
   currentGallery = [];
   currentLightboxIndex = 0;
+  currentLightboxClass = "";
   lightboxZoomed = false;
   lightboxPan = { x: 0, y: 0 };
   stopLightboxDragging();
   lightboxTrack.innerHTML = "";
   lightboxPagination.innerHTML = "";
+  lightbox.classList.remove("lightbox-gallery-dermai");
   applyLightboxZoom();
 });
 

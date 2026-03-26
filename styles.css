@@ -275,10 +275,6 @@ h1 {
   align-items: start;
 }
 
-.project-row-no-thumb {
-  grid-template-columns: 1fr;
-}
-
 .project-thumbs {
   display: grid;
   gap: 1rem;
@@ -319,7 +315,21 @@ h1 {
 
 .project-thumb-full {
   aspect-ratio: 799 / 640;
+  align-self: center;
+}
+
+.project-row-dermai .project-thumbs {
   align-self: start;
+}
+
+.project-row-dermai .project-thumb-full {
+  aspect-ratio: 811 / 561;
+}
+
+.project-row-dermai .project-thumb-full img {
+  object-fit: contain;
+  object-position: left center;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .project-info h2 {
@@ -578,6 +588,11 @@ h1 {
   user-select: none;
 }
 
+.lightbox-gallery-dermai .lightbox-item img {
+  max-width: calc(100vw - 8rem);
+  max-height: calc(100vh - 7.5rem);
+}
+
 .lightbox-nav {
   position: absolute;
   top: 50%;
@@ -759,6 +774,10 @@ h1 {
 
   .project-row {
     grid-template-columns: 1fr;
+  }
+
+  .project-row-dermai {
+    align-items: start;
   }
 
   .project-thumb {
