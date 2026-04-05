@@ -140,15 +140,15 @@ main {
 }
 
 h1 {
-  font-size: clamp(2.3rem, 4.7vw, 3.9rem);
-  max-width: 18ch;
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+  max-width: 22ch;
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
 
 .intro-sub {
   margin-top: 1.75rem;
-  max-width: 52ch;
+  max-width: 60ch;
   color: var(--text-secondary);
   font-size: 1.22rem;
   line-height: 1.75;
@@ -437,7 +437,7 @@ h1 {
 
 .about-text p {
   color: var(--text-secondary);
-  max-width: 55ch;
+  max-width: 62ch;
 }
 
 .about-text p + p {
@@ -460,8 +460,9 @@ h1 {
 }
 
 .about-aside li {
-  padding: 0.5rem 0;
+  padding: 0.65rem 0;
   font-size: 0.95rem;
+  line-height: 1.65;
   color: var(--text-secondary);
   border-bottom: 1px solid var(--border);
 }
