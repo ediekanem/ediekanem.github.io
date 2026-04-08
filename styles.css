@@ -275,6 +275,10 @@ h1 {
   align-items: start;
 }
 
+.project-row-healthycity {
+  align-items: start;
+}
+
 .project-thumbs {
   display: grid;
   gap: 1rem;
@@ -327,6 +331,21 @@ h1 {
 }
 
 .project-row-dermai .project-thumb-full img {
+  object-fit: contain;
+  object-position: left center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-row-healthycity .project-thumbs {
+  align-self: start;
+}
+
+.project-row-healthycity .project-thumb-full {
+  aspect-ratio: 1192 / 807;
+  align-self: start;
+}
+
+.project-row-healthycity .project-thumb-full img {
   object-fit: contain;
   object-position: left center;
   background: rgba(255, 255, 255, 0.02);
@@ -592,6 +611,11 @@ h1 {
 .lightbox-gallery-dermai .lightbox-item img {
   max-width: calc(100vw - 8rem);
   max-height: calc(100vh - 7.5rem);
+}
+
+.lightbox-gallery-healthycity .lightbox-item img {
+  max-width: calc(100vw - 6rem);
+  max-height: calc(100vh - 6rem);
 }
 
 .lightbox-nav {

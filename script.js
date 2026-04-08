@@ -57,6 +57,15 @@ const galleryImages = {
     { src: "assets/SQL-queries-preview-7.jpg", alt: "SQL query preview 7 for DermAI Diagnostics skin lesion analysis" },
     { src: "assets/SQL-queries-preview-8.jpg", alt: "SQL query preview 8 for DermAI Diagnostics skin lesion analysis" },
   ],
+  healthycity: [
+    { src: "assets/Python-codes-image-1.jpg", alt: "Python code preview 1 for HealthyCity NGO hospitalization risk analysis" },
+    { src: "assets/Python-codes-image-2.jpg", alt: "Python code preview 2 for HealthyCity NGO hospitalization risk analysis" },
+    { src: "assets/Python-codes-image-3.jpg", alt: "Python code preview 3 for HealthyCity NGO hospitalization risk analysis" },
+    { src: "assets/Python-codes-image-4.jpg", alt: "Python code preview 4 for HealthyCity NGO hospitalization risk analysis" },
+    { src: "assets/Python-codes-image-5.jpg", alt: "Python code preview 5 for HealthyCity NGO hospitalization risk analysis" },
+    { src: "assets/Python-codes-image-6.jpg", alt: "Python code preview 6 for HealthyCity NGO hospitalization risk analysis" },
+    { src: "assets/Python-codes-image-7.jpg", alt: "Python code preview 7 for HealthyCity NGO hospitalization risk analysis" },
+  ],
 };
 
 const LIGHTBOX_ZOOM_SCALE = 1.85;
@@ -184,6 +193,7 @@ const openLightbox = (images, startIndex = 0, lightboxClass = "") => {
   lightboxPan = { x: 0, y: 0 };
   stopLightboxDragging();
   lightbox.classList.remove("lightbox-gallery-dermai");
+  lightbox.classList.remove("lightbox-gallery-healthycity");
   if (currentLightboxClass) {
     lightbox.classList.add(currentLightboxClass);
   }
@@ -305,6 +315,7 @@ lightbox.addEventListener("close", () => {
   lightboxTrack.innerHTML = "";
   lightboxPagination.innerHTML = "";
   lightbox.classList.remove("lightbox-gallery-dermai");
+  lightbox.classList.remove("lightbox-gallery-healthycity");
   applyLightboxZoom();
 });
 
