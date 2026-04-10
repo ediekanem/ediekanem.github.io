@@ -66,6 +66,11 @@ const galleryImages = {
     { src: "assets/Python-codes-image-6.jpg", alt: "Python code preview 6 for HealthyCity NGO hospitalization risk analysis" },
     { src: "assets/Python-codes-image-7.jpg", alt: "Python code preview 7 for HealthyCity NGO hospitalization risk analysis" },
   ],
+  yellowworkforce: [
+    { src: "assets/Yellow-HR-ERD-diagram.jpg", alt: "Entity relationship diagram for Yellow Workforce Analytics HR dataset" },
+    { src: "assets/Yellow-workforce-SQL-analysis-1.jpg", alt: "SQL analysis preview 1 for Yellow Workforce Analytics" },
+    { src: "assets/Yellow-workforce-SQL-analysis-2.jpg", alt: "SQL analysis preview 2 for Yellow Workforce Analytics" },
+  ],
 };
 
 const LIGHTBOX_ZOOM_SCALE = 1.85;
@@ -194,6 +199,7 @@ const openLightbox = (images, startIndex = 0, lightboxClass = "") => {
   stopLightboxDragging();
   lightbox.classList.remove("lightbox-gallery-dermai");
   lightbox.classList.remove("lightbox-gallery-healthycity");
+  lightbox.classList.remove("lightbox-gallery-yellowworkforce");
   if (currentLightboxClass) {
     lightbox.classList.add(currentLightboxClass);
   }
@@ -316,6 +322,7 @@ lightbox.addEventListener("close", () => {
   lightboxPagination.innerHTML = "";
   lightbox.classList.remove("lightbox-gallery-dermai");
   lightbox.classList.remove("lightbox-gallery-healthycity");
+  lightbox.classList.remove("lightbox-gallery-yellowworkforce");
   applyLightboxZoom();
 });
 
