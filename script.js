@@ -39,6 +39,15 @@ const prevArrow = document.querySelector('[data-direction="prev"]');
 const nextArrow = document.querySelector('[data-direction="next"]');
 
 const galleryImages = {
+  hotelhaven: [
+    { src: "assets/chart_1_booking_status_distribution.jpg", alt: "Booking status distribution chart for Hotel Haven booking cancellation prediction" },
+    { src: "assets/chart_2_market_segment_cancellation.jpg", alt: "Market segment cancellation chart for Hotel Haven booking cancellation prediction" },
+    { src: "assets/chart_3_lead_time_market_segment_heatmap.jpg", alt: "Lead time by market segment heatmap for Hotel Haven booking cancellation prediction" },
+    { src: "assets/chart_4_special_requests_lead_time_heatmap.jpg", alt: "Special requests and lead time heatmap for Hotel Haven booking cancellation prediction" },
+    { src: "assets/chart_5_model_comparison_f1.jpg", alt: "Model comparison F1 score chart for Hotel Haven booking cancellation prediction" },
+    { src: "assets/chart_6_random_forest_confusion_matrix.jpg", alt: "Random forest confusion matrix for Hotel Haven booking cancellation prediction" },
+    { src: "assets/chart_7_random_forest_feature_importance.jpg", alt: "Random forest feature importance for Hotel Haven booking cancellation prediction" },
+  ],
   coretech: [
     { src: "assets/road-accident-overview-dashboard-preview.jpg", alt: "Road Traffic Accident Overview Dashboard built in Excel" },
     { src: "assets/road-accident-risk-factors-dashboard-preview.jpg", alt: "Road Traffic Accident Risk Factors Dashboard built in Excel" },
@@ -199,6 +208,7 @@ const openLightbox = (images, startIndex = 0, lightboxClass = "") => {
   stopLightboxDragging();
   lightbox.classList.remove("lightbox-gallery-dermai");
   lightbox.classList.remove("lightbox-gallery-healthycity");
+  lightbox.classList.remove("lightbox-gallery-hotelhaven");
   lightbox.classList.remove("lightbox-gallery-yellowworkforce");
   if (currentLightboxClass) {
     lightbox.classList.add(currentLightboxClass);
@@ -322,6 +332,7 @@ lightbox.addEventListener("close", () => {
   lightboxPagination.innerHTML = "";
   lightbox.classList.remove("lightbox-gallery-dermai");
   lightbox.classList.remove("lightbox-gallery-healthycity");
+  lightbox.classList.remove("lightbox-gallery-hotelhaven");
   lightbox.classList.remove("lightbox-gallery-yellowworkforce");
   applyLightboxZoom();
 });

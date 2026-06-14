@@ -279,6 +279,10 @@ h1 {
   align-items: start;
 }
 
+.project-row-hotelhaven {
+  align-items: start;
+}
+
 .project-thumbs {
   display: grid;
   gap: 1rem;
@@ -349,6 +353,26 @@ h1 {
   object-fit: contain;
   object-position: left center;
   background: rgba(255, 255, 255, 0.02);
+}
+
+.project-row-hotelhaven .project-thumbs {
+  align-self: start;
+}
+
+.project-row-hotelhaven .project-thumb-full img {
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-row-hotelhaven .project-thumb-hotel-confusion {
+  aspect-ratio: 518 / 389;
+  align-self: start;
+}
+
+.project-row-hotelhaven .project-thumb-hotel-importance {
+  aspect-ratio: 1046 / 542;
+  align-self: start;
 }
 
 .project-row-yellowworkforce {
@@ -651,6 +675,11 @@ h1 {
   max-height: calc(100vh - 6rem);
 }
 
+.lightbox-gallery-hotelhaven .lightbox-item img {
+  max-width: calc(100vw - 3rem);
+  max-height: calc(100vh - 4.5rem);
+}
+
 .lightbox-gallery-yellow-dashboard .lightbox-item img {
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 4rem);
@@ -844,6 +873,10 @@ h1 {
   }
 
   .project-row-yellowworkforce {
+    align-items: start;
+  }
+
+  .project-row-hotelhaven {
     align-items: start;
   }
 
